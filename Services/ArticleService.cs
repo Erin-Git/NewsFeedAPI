@@ -17,14 +17,16 @@ namespace NewsFeedAPI.Services
         public bool AddEditArticle(Article article)
         {
             bool isDone;
-            if(article.ArticleId == 0)
+            if (article.ArticleId == 0)
             {
+                article.CreatedDate = DateTime.Now;
                 _nFDbContext.Add(article);
                 _nFDbContext.SaveChanges();
                 isDone = true;
             }
             else
             {
+                article.UpdatedDate = DateTime.Now;
                 _nFDbContext.Update(article);
                 _nFDbContext.SaveChanges();
                 isDone = true;
@@ -48,11 +50,11 @@ namespace NewsFeedAPI.Services
         {
             bool isDone = false;
             Article article = GetArticle(id);
-            if(article != null)
+            if (article != null)
             {
                 _nFDbContext.Remove(article);
                 Multimedia multimedia = _nFDbContext.Multimedia.FirstOrDefault(q => q.ArticleId == id);
-                if(multimedia != null)
+                if (multimedia != null)
                 {
                     _nFDbContext.Remove(multimedia);
                 }

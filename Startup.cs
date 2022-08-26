@@ -52,7 +52,10 @@ namespace NewsFeedAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NewsFeedAPI v1"));
             }
-            app.UseCors(builders => builders.AllowAnyOrigin()/*.WithOrigins("http://localhost:4200/")*/.AllowAnyHeader().AllowAnyMethod());
+            app.UseCors(builders => builders
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
             app.UseRouting();
 
             app.UseAuthorization();

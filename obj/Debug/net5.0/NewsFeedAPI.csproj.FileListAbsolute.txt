@@ -58,4 +58,3 @@ F:\NewsFeedAPI\obj\Debug\net5.0\NewsFeedAPI.dll
 F:\NewsFeedAPI\obj\Debug\net5.0\ref\NewsFeedAPI.dll
 F:\NewsFeedAPI\obj\Debug\net5.0\NewsFeedAPI.pdb
 F:\NewsFeedAPI\obj\Debug\net5.0\NewsFeedAPI.genruntimeconfig.cache
-F:\NewsFeedAPI\obj\Debug\net5.0\NewsFeedAPI.csproj.AssemblyReference.cache

@@ -53,7 +53,7 @@ namespace NewsFeedAPI.Controllers
                 if (isRemoved)
                 {
                     apiResponse.IsExecuted = true;
-                    apiResponse.Result = "OK";
+                    apiResponse.Status = "OK";
                 }
                 else
                 {
@@ -109,7 +109,10 @@ namespace NewsFeedAPI.Controllers
                 }
                 else
                 {
-                    return NoContent();
+                    apiResponse.IsExecuted = false;
+                    apiResponse.Result = null;
+                    apiResponse.Status = "No Content";
+                    return Ok(apiResponse);
                 }
             }
             catch (Exception ex)
